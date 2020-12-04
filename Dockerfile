@@ -1,13 +1,10 @@
 # Mainly based on:
-# https://github.com/aloysius-lim/docker-pentaho-di/blob/master/docker/Dockerfile
-# https://github.com/wmarinho/docker-pentaho/blob/master/data-integration/Dockerfile
-# Docker supports OpenJDK only
-# For versions and tags see https://github.com/docker-library/docs/blob/master/java/tag-details.md
+# https://github.com/diethardsteiner/diethardsteiner.github.io/tree/master/sample-files/pdi/docker-pdi
+
 FROM java:8-jre
 
-MAINTAINER Diethard Steiner
-
 # Set required environment vars
+# Using version 9 from Pentaho
 ENV PDI_RELEASE=9.1 \
     PDI_VERSION=9.1.0.0-324 \
     CARTE_PORT=8181 \
@@ -55,7 +52,6 @@ EXPOSE ${CARTE_PORT}
 # we set the working directory here to a convenient location
 # We set it to KETTLE_HOME so we can start carte easily
 WORKDIR $KETTLE_HOME
-
 
 ENTRYPOINT ["../scripts/docker-entrypoint.sh"]
 

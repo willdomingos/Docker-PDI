@@ -2,7 +2,7 @@ version: '2'
 services:
   master:
     image:
-      willian:pdi-server
+      wdomingos/pdi-server
     ports:
       - "8181:8181"
       - "40000-40010"
@@ -14,7 +14,7 @@ services:
       - CARTE_INCLUDE_MASTERS=N
   slave:
     image:
-      willian:pdi-server
+      wdomingos/pdi-server
     ports:
       - "8182"
       - "40000-40010"
